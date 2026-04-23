@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { collection, query, orderBy, limit, onSnapshot } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { motion } from 'framer-motion';
-import { Trophy, Star, Medal } from 'lucide-react';
+import { Trophy, Star, User as UserIcon } from 'lucide-react';
 
 export default function Leaderboard() {
   const [pilots, setPilots] = useState<any[]>([]);
@@ -46,8 +46,25 @@ export default function Leaderboard() {
               <span style={{ fontSize: '0.8rem', fontWeight: '900', color: i === 0 ? 'var(--neon-yellow)' : 'rgba(255,255,255,0.3)' }}>
                 #{i + 1}
               </span>
-              <img src={pilot.photoURL} alt="" style={{ width: '24px', height: '24px', borderRadius: '50%' }} />
-              <span style={{ fontSize: '0.9rem', fontWeight: '600' }}>{pilot.displayName.split(' ')[0]}</span>
+              <div style={{ 
+                width: '24px', 
+                height: '24px', 
+                borderRadius: '50%', 
+                overflow: 'hidden', 
+                background: 'rgba(255,255,255,0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                {pilot.photoURL ? (
+                  <img src={pilot.photoURL} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ) : (
+                  <UserIcon size={14} color="rgba(255,255,255,0.5)" />
+                )}
+              </div>
+              <span style={{ fontSize: '0.9rem', fontWeight: '600' }}>
+                {pilot.displayName ? pilot.displayName.split(' ')[0] : 'Pilot'}
+              </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
               <span style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'var(--neon-blue)' }}>{pilot.aura}</span>
