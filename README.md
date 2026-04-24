@@ -3,6 +3,8 @@
 [![Live Platform](https://img.shields.io/badge/Live-CloudQuest-blue?style=for-the-badge&logo=google-cloud)](https://cloudquest-platform-12345.web.app)
 [![Tech Stack](https://img.shields.io/badge/Stack-Next.js%20|%20Firebase%20|%20Framer%20Motion-black?style=for-the-badge)](https://nextjs.org)
 
+![CloudQuest Hero Surface](public/cloudquest-hero.png)
+
 **CloudQuest** is a premium, gamified educational platform designed to take beginners from "Ground Control" to "Fleet Commander" in the Google Cloud AI ecosystem. Built with a cinematic space-exploration narrative, it transforms complex cloud concepts into an immersive mission-based journey.
 
 ---
